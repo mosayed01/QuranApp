@@ -12,25 +12,113 @@
         android:layout_height="match_parent"
         tools:context=".SuraFragment">
 
-
+        <!--toolbar-->
         <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="0dp"
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="?attr/colorSurface"
+            android:padding="8dp"
+            app:elevation="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
+            <com.google.android.material.appbar.MaterialToolbar
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="?attr/colorPrimary"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="0dp" />
+                android:layout_height="?attr/actionBarSize"
+                app:menu="@menu/menu"
+                app:navigationIcon="@drawable/ic_menu"
+                app:title="@string/app_name"
+                app:titleCentered="true"
+                app:titleTextColor="@color/primaryColor" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
+        <!--head-->
+        <FrameLayout
+            android:id="@+id/frame_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/default_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appbar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/card_background_first"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/icon_book"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="35dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_quran_book"
+                    tools:ignore="ContentDescription,RtlSymmetry" />
+
+                <TextView
+                    android:id="@+id/last_read"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:fontFamily="@font/josefin_sans"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/icon_book"
+                    app:layout_constraintStart_toEndOf="@id/icon_book"
+                    app:layout_constraintTop_toTopOf="@id/icon_book"
+                    tools:text="Last Read" />
+
+                <TextView
+                    android:id="@+id/tv_sura_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/josefinsansbold"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size_big_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/icon_book"
+                    app:layout_constraintTop_toBottomOf="@+id/last_read"
+                    app:layout_constraintVertical_bias="0.32999998"
+                    tools:text="Al-Fatiha" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mali"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size_nano_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/icon_book"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_sura_name"
+                    app:layout_constraintVertical_bias="0.18"
+                    tools:text="Aya No: 3" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
+
+        <!--recycleView-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/frame_head"
+            tools:listitem="@layout/item_sura" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

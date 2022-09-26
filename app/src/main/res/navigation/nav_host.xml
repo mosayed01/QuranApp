@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/ayatFragmen"
-        android:name="com.mosayed.quranapp.AyatFragmen"
+        android:name="com.mosayed.quranapp.AyatFragment"
         android:label="fragment_ayat"
         tools:layout="@layout/fragment_ayat" >
         <action
