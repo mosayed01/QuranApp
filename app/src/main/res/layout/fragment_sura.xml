@@ -5,14 +5,14 @@
 
     <data>
         <variable
-            name="aya"
-            type="com.mosayed.quranapp.domain.model.Ayah" />
+            name="viewmodel"
+            type="com.mosayed.quranapp.ui.fragments.vm.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.SuraFragment">
+        tools:context=".ui.fragments.SuraFragment">
 
         <!--toolbar-->
         <com.google.android.material.appbar.AppBarLayout

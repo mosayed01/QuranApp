@@ -1,8 +1,9 @@
 package com.mosayed.quranapp.data.remote.util
 
-import io.ktor.client.plugins.ClientRequestException
-import io.ktor.client.plugins.RedirectResponseException
-import io.ktor.client.plugins.ServerResponseException
+import io.ktor.client.features.ClientRequestException
+import io.ktor.client.features.RedirectResponseException
+import io.ktor.client.features.ServerResponseException
+
 
 suspend fun <T> tryToCall(call: suspend () -> List<T>): List<T> {
     return try {

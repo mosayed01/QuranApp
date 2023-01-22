@@ -8,8 +8,10 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.android.Android
-import io.ktor.client.plugins.logging.LogLevel
-import io.ktor.client.plugins.logging.Logging
+import io.ktor.client.features.json.JsonFeature
+import io.ktor.client.features.json.serializer.KotlinxSerializer
+import io.ktor.client.features.logging.LogLevel
+import io.ktor.client.features.logging.Logging
 import javax.inject.Singleton
 
 @Module
@@ -24,9 +26,9 @@ object AppModule {
                 install(Logging){
                     level = LogLevel.ALL
                 }
-//                install(JsonFeature){
-//
-//                }
+                install(JsonFeature){
+                    serializer = KotlinxSerializer()
+                }
             }
         )
     }
