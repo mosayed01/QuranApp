@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/suraFragment"
-        android:name="com.mosayed.quranapp.SuraFragment"
+        android:name="com.mosayed.quranapp.ui.SuraFragment"
         android:label="fragment_sura"
         tools:layout="@layout/fragment_sura" >
         <action
@@ -16,9 +16,9 @@
     </fragment>
     <fragment
         android:id="@+id/ayatFragmen"
-        android:name="com.mosayed.quranapp.AyatFragment"
+        android:name="com.mosayed.quranapp.ui.AyaFragment"
         android:label="fragment_ayat"
-        tools:layout="@layout/fragment_ayat" >
+        tools:layout="@layout/fragment_aya" >
         <action
             android:id="@+id/action_ayatFragmen_to_suraFragment"
             app:destination="@id/suraFragment" />

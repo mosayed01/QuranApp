@@ -1,5 +1,8 @@
-package com.mosayed.quranapp.model
+package com.mosayed.quranapp.domain.model
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class Ayah(
     val arabic_text: String,
     val aya: String,

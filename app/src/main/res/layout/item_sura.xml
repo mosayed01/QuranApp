@@ -7,7 +7,7 @@
 
         <variable
             name="sura"
-            type="com.mosayed.quranapp.model.Sura" />
+            type="com.mosayed.quranapp.domain.model.Sura" />
     </data>
 
     <androidx.cardview.widget.CardView
